@@ -273,6 +273,10 @@ document.getElementById("input").addEventListener("input", function () {
         document.getElementById("score").textContent = `${score} / ${total}`;
         this.value = "";
     }
+
+    if (score == 2) {
+        alert("You won The Game!")
+    }
 });
 </script>
 </body>
