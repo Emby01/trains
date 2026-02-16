@@ -3,7 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>NSW Intercity Rail Map Quiz</title>
-    <link href = "styles.css" rel = "stylesheet">
+    <!-- <link href = "styles.css" rel = "stylesheet"> -->
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 0;
+        height: 100vh;
+    }
+
+    #map-container {
+        overflow: auto;
+        background: #f0f0f0;
+    }
+
+    #answer-box {
+        padding: 15px;
+        background: #fff;
+        text-align: center;
+    }
+
+    #input {
+        width: 70%;
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    #score {
+        font-size: 20px;
+        font-weight: bold;
+        padding: 10px;
+    }
+
+    .correct {
+        fill: #00ff00 !important;
+    }
+
+    .center {
+        display: block;
+        margin: 0 auto;
+    }
+
+    #svg { 
+        display: block;
+        margin: 0 auto;
+    }
+</style>
 </head>
 
 <body>
@@ -19,18 +63,12 @@
     <div class = "center" id="score">0 / 0</div>
 </div>
 
-<div>
-    <h2 class = "center">Also try...</h2>
-    <div class = "also-try">
-        <a href = "index.html"><div class = "also-try-item">
-            <img src = "media/sydneyrail.png" alt = "Sydney Rail Map">
-            <h3>Sydney Rail</h3>
-        </div></a>
-    </div>
-</div>
-
-<script src = "scripts.js" async defer></script>
+<!-- <script src = "scripts.js" async defer></script> -->
 <script async>
+function normalise(str) { // Normalise input so lowercase allowed and no spaces required
+    return str.toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
 // Station list
 const answers = {
     "aberdeen": "aberdeen",
@@ -209,10 +247,36 @@ const answers = {
     "zigzag": "zigzag",
 };
 
+let total = Object.keys(answers).length;
+let score = 0;
+document.getElementById("score").textContent = `${score} / ${total}`;
+
+function sleep(ms) { // Goofy sleep function
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 async function youwon() {
   await sleep(400); // Uses that sleep function to pause for a bit, delaying the message
   alert("You won The Game (but it's Intercity)!");
 }
+
+document.getElementById("input").addEventListener("input", function () {
+    let guess = normalise(this.value);
+
+    if (answers[guess]) {
+        let id = answers[guess];
+        let el = document.getElementById(id);
+        if (el) el.classList.add("correct");
+        delete answers[guess];
+        score++;
+        document.getElementById("score").textContent = `${score} / ${total}`;
+        this.value = "";
+    }
+
+    if (score == total) {
+        youwon();
+    }
+});
 </script>
 </body>
 </html>
