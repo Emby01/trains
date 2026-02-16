@@ -43,6 +43,7 @@ body {
 
 h2 {
     width: fit-content;
+    margin: 0.5rem auto !important;
 }
 
 .also-try {
@@ -58,11 +59,26 @@ h2 {
     height: 100px;
 }
 
-.also-try h3 a {
+.also-try a {
     text-decoration: none;
     color: black;
 }
 
-.also-try h3 a:hover {
+.also-try a:hover {
     text-decoration: underline;
+}
+
+.also-try-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #f0f0f0;
+    width: 125px;
+}
+
+.also-try-item h3 {
+    margin-bottom: 0;
 }
