@@ -64,11 +64,11 @@
 
 <!-- <script src = "scripts.js" async defer></script> -->
 <script async>
-function normalize(str) {
+function normalise(str) { // Normalise input so lowercase allowed and no spaces required
     return str.toLowerCase().replace(/[^a-z0-9]/g, "");
 }
 
-// Your station list
+// Station list
 const answers = {
     "allawah": "Allawah",
     "arncliffe": "Arncliffe",
@@ -261,17 +261,17 @@ let total = Object.keys(answers).length;
 let score = 0;
 document.getElementById("score").textContent = `${score} / ${total}`;
 
-function sleep(ms) {
+function sleep(ms) { // Goofy sleep function
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 async function youwon() {
-  await sleep(400); // Pauses the action
+  await sleep(400); // Uses that sleep function to pause for a bit, delaying the message
   alert("You won The Game!");
 }
 
 document.getElementById("input").addEventListener("input", function () {
-    let guess = normalize(this.value);
+    let guess = normalise(this.value);
 
     if (answers[guess]) {
         let id = answers[guess];
