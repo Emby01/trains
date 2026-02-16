@@ -63,7 +63,7 @@
 </div>
 
 <!-- <script src = "scripts.js" async defer></script> -->
-<script>
+<script async>
 function normalize(str) {
     return str.toLowerCase().replace(/[^a-z0-9]/g, "");
 }
@@ -261,6 +261,15 @@ let total = Object.keys(answers).length;
 let score = 0;
 document.getElementById("score").textContent = `${score} / ${total}`;
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function youwon() {
+  await sleep(400); // Pauses the action
+  alert("You won The Game!");
+}
+
 document.getElementById("input").addEventListener("input", function () {
     let guess = normalize(this.value);
 
@@ -274,8 +283,8 @@ document.getElementById("input").addEventListener("input", function () {
         this.value = "";
     }
 
-    if (score == 2) {
-        alert("You won The Game!")
+    if (score == 185) {
+        youwon();
     }
 });
 </script>
