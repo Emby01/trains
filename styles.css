@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 body {
     font-family: Arial, sans-serif;
     padding: 0;
@@ -27,15 +28,15 @@ body {
     padding: 10px;
 }
 
-circle.correct {
+circle.correct, path.correct {
     fill: #00ff00 !important;
 }
 
 svg text {
-    display: none;
+    /* display: none; */
 }
 
-svg .title text, #titleroundel {
+svg .title text, #titleroundel, text.title {
     display: block;
 }
 
