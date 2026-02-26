@@ -27,8 +27,20 @@ body {
     padding: 10px;
 }
 
-.correct {
+circle.correct {
     fill: #00ff00 !important;
+}
+
+svg text {
+    display: none;
+}
+
+svg .title text, #titleroundel {
+    display: block;
+}
+
+svg .correct text {
+    display: block !important
 }
 
 .center {
@@ -81,5 +93,5 @@ h2 {
 
 .also-try-item h3 {
     margin-bottom: 0;
-    font-size: clamp(1rem, 2vw, 2rem);
+    font-size: 1rem;
 }
