@@ -12,14 +12,26 @@ body {
 
 #answer-box {
     padding: 15px;
-    background: #fff;
     text-align: center;
+    position: sticky;
+    bottom: 1rem;
+    width: fit-content;
+    margin: 0 auto;
+    border: none;
+    border-radius: 1rem;
+    background: none;
+    backdrop-filter: blur(2rem) saturate(150%);
 }
 
 #input {
-    width: 70%;
+    width: 45rem;
     padding: 10px;
     font-size: 18px;
+    border: none; 
+    border-bottom: 2px solid black; 
+    padding: 5px 0;
+    outline: none;
+    background: none;
 }
 
 #score {
