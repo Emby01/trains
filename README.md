@@ -9,3 +9,4 @@ Sydney Trains Quiz
 - [SHB2000](https://commons.wikimedia.org/wiki/User:SHB2000) on Wikimedia Commons for the [Dubbo XPT Map](https://commons.wikimedia.org/wiki/File:Dubbo_XPT_diagram.svg). Modified by me, licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
 - SHB2000 on Wikimedia Commons for the [Broken Hill XPL Map](https://commons.wikimedia.org/wiki/File:Broken_Hill_XPL_diagram.svg). Modified by me, licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
 - SHB2000 on Wikimedia Commons for the [North Coast XPT Map](https://commons.wikimedia.org/wiki/File:North_Coast_XPT_diagram.svg). Modified by me, licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
+- SHB2000 on Wikimedia Commons for the [North Western XPT Map](https://commons.wikimedia.org/wiki/File:Armidale_and_Moree_XPL_diagram.svg). Modified by me, licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
