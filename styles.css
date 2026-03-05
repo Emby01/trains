@@ -21,6 +21,7 @@ body {
     border-radius: 1rem;
     background: none;
     backdrop-filter: blur(2rem) saturate(150%);
+    max-width: 100%;
 }
 
 #input {
