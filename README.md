@@ -12,4 +12,5 @@ Sydney Trains Quiz
 - SHB2000 on Wikimedia Commons for the [North Western XPT Map](https://commons.wikimedia.org/wiki/File:Armidale_and_Moree_XPL_diagram.svg). Modified by me, licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
 - SHB2000 on Wikimedia Commons for the [Melbourne XPT Map](https://commons.wikimedia.org/wiki/File:Melbourne_XPT_diagram.svg). Modified by me, licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
 - SHB2000 on Wikimedia Commons for the [Griffith XPL Map](https://commons.wikimedia.org/wiki/File:Griffith_XPL_diagram.svg). Modified by me, licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
+- SHB2000 on Wikimedia Commons for the [Canberra XPL Map](https://commons.wikimedia.org/wiki/File:Canberra_XPL_diagram.svg). Modified by me, licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
 - Jason (moral support)
