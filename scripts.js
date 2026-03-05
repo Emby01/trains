@@ -15,8 +15,12 @@ document.getElementById("input").addEventListener("input", function () {
 
     if (answers[guess]) {
         let id = answers[guess];
-        let el = document.getElementById(id);
-        if (el) el.classList.add("correct");
+        let els = document.getElementsByClassName(id);
+        if (els) {
+            for (let el of els) {
+                el.classList.add("correct");
+            }
+        }
         delete answers[guess];
         score++;
         document.getElementById("score").textContent = `${score} / ${total}`;
