@@ -62,7 +62,7 @@ svg .correct text {
     margin: 0 auto;
 }
 
-#svg {
+svg, #svg {
     display: block;
     margin: 0 auto;
 }
