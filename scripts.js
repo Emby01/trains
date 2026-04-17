@@ -31,3 +31,15 @@ document.getElementById("input").addEventListener("input", function () {
         youwon();
     }
 });
+
+const sticky = document.getElementById("answer-box"); // Get the sticky element
+
+function updateViewport() { // Update sticky element position function
+    const viewport = window.visualViewport;
+    const offsetTop = window.innerHeight - viewport.height - viewport.offsetTop; // somehow this calculates offset nicely
+    sticky.style.transform = `translateY(-${offsetTop}px)`; // set sticky element position
+}
+
+// Event listeners checking if resize or scroll occurred
+window.visualViewport?.addEventListener("resize", updateViewport); // ? checks if visualViewport exists (because check is actually in the function)
+window.visualViewport?.addEventListener("scroll", updateViewport);
