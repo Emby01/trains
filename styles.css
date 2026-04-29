@@ -19,10 +19,20 @@ body {
     margin: 0 auto;
     border: none;
     border-radius: 1rem;
-    background: none;
     backdrop-filter: blur(2rem) saturate(150%);
     max-width: 90%;
+    background: rgba(255, 255, 255, 0.25);
+    color: #000;
     transition: transform 0.1s ease-out; 
+}
+
+#answer-box::before {
+    content: "";
+    border-radius: 1rem;
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.3); /* the stabilizer layer */
+    z-index: -1;
 }
 
 #input {
@@ -34,12 +44,14 @@ body {
     padding: 5px 0;
     outline: none;
     background: none;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
 }
 
 #score {
     font-size: 20px;
     font-weight: bold;
     padding: 10px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
 }
 
 circle.correct, path.correct, g.correct, g.correct path {
