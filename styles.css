@@ -42,7 +42,7 @@ body {
     padding: 10px;
 }
 
-circle.correct, path.correct {
+circle.correct, path.correct, g.correct, g.correct path {
     fill: #00ff00 !important;
 }
 
@@ -55,7 +55,11 @@ svg .title text, #titleroundel, text.title, tspan.title {
 }
 
 svg .correct text {
-    display: block !important
+    display: block !important;
+}
+
+.correct {
+    display: block;
 }
 
 .center {
