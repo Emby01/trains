@@ -1,16 +1,18 @@
 import re
+import os
 # Required files: stations.txt, toconvert.txt
 # Creates converted.txt
-with open("stations.txt", "r", encoding="utf-8") as file:
+print(os.getcwd())
+with open("tools/stations.txt", "r", encoding="utf-8") as file:
     stations = [line.strip() for line in file if line.strip()]
 print("Successfully read stations")
 
 # Create the re pattern which creates stuff like "Central"
-repattern = r"(" + "|".join(re.escape(station) for station in stations) + r")1"
+repattern = r"(" + "|".join(re.escape(station) for station in stations) + r")\d+"
 print("Successfully created repattern")
 
 
-with open("toconvert.txt", "r", encoding="utf-8") as file:
+with open("tools/toconvert.txt", "r", encoding="utf-8") as file:
     svg = file.read()
 print("Successfully read toconvert")
 
@@ -31,6 +33,6 @@ id_regex = rf'class="Layer-1"' # Replace this random id thing
 svg = re.sub(id_regex, r'class="Layer-1"', svg)
 print("Cleanup complete")
 
-with open("converted.txt", "w", encoding="utf-8") as file:
+with open("tools/converted.txt", "w", encoding="utf-8") as file:
     file.write(svg)
 print("Convert complete")
