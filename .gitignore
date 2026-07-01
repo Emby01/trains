@@ -1,6 +1,7 @@
 ## trains tools
-tools/*
-!tools/convert.py
+tools/converted.txt
+tools/stations.txt
+tools/toconvert.txt
 
 # Affinity locks
 .*~lock*
