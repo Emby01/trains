@@ -1,19 +1,24 @@
 import re
+import os
 # Required files: stations.txt, toconvert.txt
 # Creates converted.txt
-with open("stations.txt", "r", encoding="utf-8") as file:
+print(os.getcwd())
+with open("tools/stations.txt", "r", encoding="utf-8") as file:
     stations = [line.strip() for line in file if line.strip()]
 print("Successfully read stations")
 
 # Create the re pattern which creates stuff like "Central"
-repattern = r"(" + "|".join(re.escape(station) for station in stations) + r")1"
+repattern = r"(" + "|".join(re.escape(station) for station in stations) + r")\d+"
 print("Successfully created repattern")
 
 
-with open("toconvert.txt", "r", encoding="utf-8") as file:
+with open("tools/toconvert.txt", "r", encoding="utf-8") as file:
     svg = file.read()
 print("Successfully read toconvert")
 
+first_regex = r'<\?xml.*?\?>|<!DOCTYPE.*?>'
+svg = re.sub(first_regex, '', svg)
+print("Successfully removed header tag")
 
 id_regex = rf'\s*id="{repattern}"' # Remove leading spaces
 svg = re.sub(id_regex, "", svg) # Replace the id="thing1" with NOTHING
@@ -29,8 +34,15 @@ print("Successfully converted id's")
 
 id_regex = rf'class="Layer-1"' # Replace this random id thing
 svg = re.sub(id_regex, r'class="Layer-1"', svg)
+print("Successfully replaced random layer-1 id thingy")
+
+# Dedicated to Fairfield
+g_regex_thingy = r'<g\s+class="([^"]+)"[^>]*>\s*</g>\s*<text\b'
+svg = re.sub(g_regex_thingy, r'<text class="\1"', svg)
+print("Successfully un-Fairfielded")
+
 print("Cleanup complete")
 
-with open("converted.txt", "w", encoding="utf-8") as file:
+with open("tools/converted.txt", "w", encoding="utf-8") as file:
     file.write(svg)
 print("Convert complete")
