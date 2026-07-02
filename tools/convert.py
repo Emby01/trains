@@ -31,6 +31,13 @@ print("Successfully converted id's")
 
 id_regex = rf'class="Layer-1"' # Replace this random id thing
 svg = re.sub(id_regex, r'class="Layer-1"', svg)
+print("Successfully replaced random layer-1 id thingy")
+
+# Dedicated to Fairfield
+g_regex_thingy = r'<g\s+class="([^"]+)"[^>]*>\s*</g>\s*<text\b'
+svg = re.sub(g_regex_thingy, r'<text class="\1"', svg)
+print("Successfully un-Fairfielded")
+
 print("Cleanup complete")
 
 with open("tools/converted.txt", "w", encoding="utf-8") as file:
