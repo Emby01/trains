@@ -16,6 +16,9 @@ with open("tools/toconvert.txt", "r", encoding="utf-8") as file:
     svg = file.read()
 print("Successfully read toconvert")
 
+first_regex = r'<\?xml.*?\?>|<!DOCTYPE.*?>'
+svg = re.sub(first_regex, '', svg)
+print("Successfully removed header tag")
 
 id_regex = rf'\s*id="{repattern}"' # Remove leading spaces
 svg = re.sub(id_regex, "", svg) # Replace the id="thing1" with NOTHING
